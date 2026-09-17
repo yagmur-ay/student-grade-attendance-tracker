@@ -52,8 +52,6 @@ int main() {
         switch(choice) {
             
             case 1: addStudent(names, studentCount, absences);  
- // Ama biz addStudent'ı reference (&) ile tanımlamıştık, pointer (*) ile değil. Hatırlarsan reference'ın en büyük avantajı tam da buydu: 
-//çağırırken & yazmana gerek yok normal değişken adını yazman yeterli referans olma işi fonksiyonun tanımında(int &studentCount prototipte)halletti
              break;
 // We defined addStudent with reference (&), not pointer (*). If you remember, this was exactly the biggest advantage of reference: 
 //You don't need to write & when calling; just write the regular variable name; the reference handling is handled in the function definition (int &studentCount in the prototype).
@@ -113,7 +111,7 @@ void addStudent(string names[], int &studentCount, int absences[]){
         cout << "Cannot add more students, limit reached!\n";
         return;
     }
-    cin.ignore();    // önceki cin >> choice'tan kalan "Enter" karakterini temizle
+    cin.ignore();   
     cout<<"Enter student name: ";
     //cin >> or getline(cin, . since the name may contain spaces...)
     getline(cin, names[studentCount]);    // Consider: studentCount currently holds the information "how many students have been added so far".
